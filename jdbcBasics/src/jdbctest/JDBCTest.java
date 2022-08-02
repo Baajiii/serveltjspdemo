@@ -11,7 +11,8 @@ public class JDBCTest {
 	public static void main(String[] args) {
 //		readFromDb();
 //		insertIntoDb();
-		updateDb();
+//		updateDb();
+		deleteDb();
 
 	}
 		
@@ -53,6 +54,17 @@ public class JDBCTest {
 		}
 	}
 	
+	private static void deleteDb() {
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "Samsudeen21");
+				Statement statement = connection.createStatement();){
+			
+			int rowsInserted = statement.executeUpdate("delete from account where balance=20000");
+			System.out.println("Number of rows inserted : " + rowsInserted);
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	}
 
