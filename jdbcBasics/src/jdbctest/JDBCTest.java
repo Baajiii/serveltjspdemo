@@ -11,8 +11,8 @@ public class JDBCTest {
 	public static void main(String[] args) {
 //		readFromDb();
 //		insertIntoDb();
-//		updateDb();
-		deleteDb();
+		updateDb();
+//		deleteDb();
 
 	}
 		
@@ -46,7 +46,7 @@ public class JDBCTest {
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "Samsudeen21");
 				Statement statement = connection.createStatement();){
 			
-			int rowsInserted = statement.executeUpdate("update account set balance=20000 where accno=4");
+			int rowsInserted = statement.executeUpdate("update account set accno=1 where balance=2000");
 			System.out.println("Number of rows inserted : " + rowsInserted);
 		
 		} catch (SQLException e) {
@@ -58,7 +58,7 @@ public class JDBCTest {
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "Samsudeen21");
 				Statement statement = connection.createStatement();){
 			
-			int rowsInserted = statement.executeUpdate("delete from account where balance=20000");
+			int rowsInserted = statement.executeUpdate("delete from account where balance=1000");
 			System.out.println("Number of rows inserted : " + rowsInserted);
 		
 		} catch (SQLException e) {
