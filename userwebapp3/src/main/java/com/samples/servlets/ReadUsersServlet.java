@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(urlPatterns="/readuserServlet", loadOnStartup = 4)
 public class ReadUsersServlet extends HttpServlet {
 
 	Connection connection;
